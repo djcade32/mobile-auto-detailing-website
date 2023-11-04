@@ -94,7 +94,7 @@ section {
   display: block;
 }
 
-nav ul {
+nav ul, li {
   list-style: none;
 }
 

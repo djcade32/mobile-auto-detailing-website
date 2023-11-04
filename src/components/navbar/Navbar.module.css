@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary);
+    color: white;
+    padding: var(--spacing-4) var(--spacing-1);
+}
+
+.navbar__logo {
+    width: 73px;
+}
+
+.navbar__navLinks {
+    display: flex;
+    column-gap: var(--spacing-2);
+}
+
+.navbar__navLinks li {
+    cursor: pointer;
+}
+
+.navbar__navLinks li div{
+   padding-bottom: var(--spacing-5);
+}
+
+.navbar__navLinkSelected {
+    animation: animate-navLink-selected .50s forwards;
+}
+
+@keyframes animate-navLink-selected {
+    0% {
+        border-bottom: 1px solid transparent
+    }
+    100% {
+        border-bottom: 1px solid white
+    }
+}
