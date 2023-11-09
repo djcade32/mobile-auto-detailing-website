@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-4) 100px;
+    
 }
 
 .navbar__desktop {
@@ -37,9 +38,15 @@
     flex-direction: column;
 }
 
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: var(--spacing-4) var(--spacing-1);
+    }
+}
+
 @media screen and (max-width: 800px) {
     .navbar {
-        padding: var(--spacing-4);
+        padding: var(--spacing-3);
     }
 
     .navbar__desktop {
@@ -68,6 +75,7 @@
         padding: var(--spacing-3) var(--spacing-4);
     }
 }
+
 
 @keyframes animate-navLink-selected {
     0% {

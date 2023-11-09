@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import Button from "../../components/button/Button";
+import Services from "../services/Services";
 
 const Hero = () => {
   return (
     <div className={styles.hero}>
-      <div className={styles.hero__overlay} />
+      <div className="app__overlay" />
       <div className={styles.hero__content}>
         <div>
           <p className={styles.hero__content_header}>
@@ -24,6 +25,7 @@ const Hero = () => {
           buttonContainer={{ fontSize: "var(--fontSize-header)", fontWeight: "bold" }}
         />
       </div>
+      <Services />
     </div>
   );
 };
