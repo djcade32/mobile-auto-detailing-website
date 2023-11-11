@@ -1,0 +1,8 @@
+
+.sectionHeader {
+    font-size: var(--fontSize-header);
+    font-weight: bold;
+    padding-bottom: var(--spacing-5);
+    margin-bottom: var(--spacing-1);
+    width: fit-content;
+}

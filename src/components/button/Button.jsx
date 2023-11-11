@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ title, onClick, buttonContainer, color }) => {
+const Button = ({ title, onClick, buttonContainer, color, textColor }) => {
   return (
     <div
       className={styles.button}
@@ -12,7 +12,7 @@ const Button = ({ title, onClick, buttonContainer, color }) => {
       }
       onClick={onClick}
     >
-      <p>{title}</p>
+      <p style={{ color: textColor }}>{title}</p>
     </div>
   );
 };

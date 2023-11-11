@@ -25,7 +25,6 @@ const Hero = () => {
           buttonContainer={{ fontSize: "var(--fontSize-header)", fontWeight: "bold" }}
         />
       </div>
-      <Services />
     </div>
   );
 };

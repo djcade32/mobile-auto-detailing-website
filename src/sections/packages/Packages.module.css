@@ -1,0 +1,29 @@
+.packages {
+    background-color: var(--gray);
+    padding: var(--spacing-2) var(--spacing-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--spacing-1);
+}
+
+.packages__cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 805px) {
+    .packages__cards {
+       row-gap: var(--spacing-1); 
+       flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .packages__cards {
+        flex-direction: column;
+        align-items: center;
+        row-gap: var(--spacing-1);
+    }
+}

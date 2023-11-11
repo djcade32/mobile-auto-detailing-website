@@ -33,3 +33,9 @@ body {
     height: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+    .body {
+        margin: 0px 300px;
+    }
+}
+
