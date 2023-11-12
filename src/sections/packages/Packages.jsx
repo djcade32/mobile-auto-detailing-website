@@ -40,8 +40,8 @@ const Packages = () => {
     <div className={styles.packages}>
       <SectionHeader text="Packages" color="var(--primary)" />
       <div className={styles.packages__cards}>
-        {packagesData.map((p) => (
-          <PackageCard packageInfo={p} />
+        {packagesData.map((p, index) => (
+          <PackageCard key={index} packageInfo={p} />
         ))}
       </div>
     </div>

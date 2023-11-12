@@ -1,0 +1,17 @@
+.testimonialCard {
+    display: flex;
+    flex-direction: column;
+    width: 395px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    row-gap: var(--spacing-5);
+    padding: var(--spacing-2) 0px;
+}
+
+.testimonialCard p:first-of-type {
+    font-size: var(--fontSize-header);
+    font-weight: bold;
+}
+
+.testimonialCard p:last-of-type {
+    line-height: 1.5;
+}

@@ -32,7 +32,7 @@ const PackageCard = ({ packageInfo }) => {
       <div className={styles.packageCard__content}>
         <div className={styles.packageCard__content_features}>
           {AllPackageFeatures.map((feature) => (
-            <div className={styles.packageCard__content_features_feature}>
+            <div key={feature} className={styles.packageCard__content_features_feature}>
               <div>
                 <BsCheckLg
                   size={50}
