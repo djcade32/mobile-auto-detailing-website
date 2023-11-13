@@ -23,6 +23,7 @@ const testimonialsData = [
 ];
 
 const Testimonials = () => {
+  // May want to turn this into a carousel in the future
   return (
     <div className={styles.testimonials}>
       <div className="app__overlay" />
