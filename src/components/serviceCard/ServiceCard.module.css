@@ -47,12 +47,18 @@
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 630px) {
     .serviceCard{
         width: 90%; 
     }
 
     .serviceCard__imgContainer {
-        position: relative;
+        height:300px; 
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .serviceCard__imgContainer {
+        height: 200px; 
     }
 }
