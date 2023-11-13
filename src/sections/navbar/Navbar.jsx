@@ -50,6 +50,11 @@ const Navbar = () => {
             setSelectedLink={setSelectedLink}
           />
           <NavbarLink
+            linkName={"Gallery"}
+            selectedLink={selectedLink}
+            setSelectedLink={setSelectedLink}
+          />
+          <NavbarLink
             linkName={"Contact Us"}
             selectedLink={selectedLink}
             setSelectedLink={setSelectedLink}
@@ -87,6 +92,12 @@ const Navbar = () => {
               />
               <NavbarLink
                 linkName={"Testimonials"}
+                selectedLink={selectedLink}
+                setSelectedLink={setSelectedLink}
+                color="var(--primary)"
+              />
+              <NavbarLink
+                linkName={"Gallery"}
                 selectedLink={selectedLink}
                 setSelectedLink={setSelectedLink}
                 color="var(--primary)"
