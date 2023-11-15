@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: var(--spacing-1);
+    scroll-margin-top: 6rem;
+
 }
 
 .packages__cards {

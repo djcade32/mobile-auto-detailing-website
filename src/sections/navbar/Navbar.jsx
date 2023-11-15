@@ -11,6 +11,35 @@ const Navbar = () => {
   const ref = useRef(null);
 
   useEffect(() => {
+    const sections = document.querySelectorAll(".section");
+    const navLi = document.querySelectorAll(".navbar__navLinks_link");
+
+    const detectActiveSection = () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLi.forEach((li) => {
+        li.classList.remove("navbar__navLinks_link_active");
+        if (li.classList.contains(current)) {
+          li.classList.add("navbar__navLinks_link_active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", detectActiveSection);
+    return () => {
+      window.removeEventListener("scroll", detectActiveSection);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
         setMobileMenuOpen(false);
@@ -29,36 +58,16 @@ const Navbar = () => {
       </div>
       <div className={styles.navbar__desktop}>
         <ul className={styles.navbar__navLinks}>
-          <NavbarLink
-            linkName={"Home"}
-            selectedLink={selectedLink}
-            setSelectedLink={setSelectedLink}
-          />
-          <NavbarLink
-            linkName={"Services"}
-            selectedLink={selectedLink}
-            setSelectedLink={setSelectedLink}
-          />
-          <NavbarLink
-            linkName={"Packages"}
-            selectedLink={selectedLink}
-            setSelectedLink={setSelectedLink}
-          />
-          <NavbarLink
-            linkName={"Testimonials"}
-            selectedLink={selectedLink}
-            setSelectedLink={setSelectedLink}
-          />
-          <NavbarLink
-            linkName={"Gallery"}
-            selectedLink={selectedLink}
-            setSelectedLink={setSelectedLink}
-          />
-          <NavbarLink
-            linkName={"Contact Us"}
-            selectedLink={selectedLink}
-            setSelectedLink={setSelectedLink}
-          />
+          <NavbarLink linkName={"Home"} defaultLink />
+          <NavbarLink linkName={"Services"} />
+          <NavbarLink linkName={"Packages"} />
+          <NavbarLink linkName={"Testimonials"} />
+          <NavbarLink linkName={"Gallery"} />
+          <div className={styles.navbar__navLinks_button}>
+            <li>
+              <a href="#footer">Contact Us</a>
+            </li>
+          </div>
         </ul>
       </div>
       <div ref={ref} className={styles.navbar__mobile}>

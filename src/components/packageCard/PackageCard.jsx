@@ -59,6 +59,7 @@ const PackageCard = ({ packageInfo }) => {
             fontWeight: "bold",
             marginTop: "var(--spacing-2)",
           }}
+          hoverColor="var(--primary-hover)"
         />
       </div>
     </div>

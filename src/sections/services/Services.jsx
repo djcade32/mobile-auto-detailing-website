@@ -10,7 +10,7 @@ import SectionHeader from "../../components/sectionHeader/SectionHeader";
 
 const Services = () => {
   return (
-    <div className={styles.services}>
+    <div className={`section ${styles.services}`} id="services">
       <SectionHeader text="Our Services" color="white" />
       <div className={styles.services__cards}>
         <ServiceCard

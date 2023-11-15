@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styles from "./Packages.module.css";
 import SectionHeader from "../../components/sectionHeader/SectionHeader";
@@ -37,7 +37,7 @@ const packagesData = [
 
 const Packages = () => {
   return (
-    <div className={styles.packages}>
+    <div className={`section ${styles.packages}`} id="packages">
       <SectionHeader text="Packages" color="var(--primary)" />
       <div className={styles.packages__cards}>
         {packagesData.map((p, index) => (

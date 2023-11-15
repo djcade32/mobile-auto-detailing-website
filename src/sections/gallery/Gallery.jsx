@@ -77,7 +77,7 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
 
 const Gallery = () => {
   return (
-    <div className={styles.gallery}>
+    <div className={`section ${styles.gallery}`} id="gallery">
       <SectionHeader text="Gallery" color="var(--primary)" />
       <div style={{ width: "100%" }}>
         <Carousel

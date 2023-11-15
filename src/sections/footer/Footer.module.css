@@ -8,7 +8,7 @@
     padding-top: var(--spacing-1);
     padding-bottom: var(--spacing-3);
     row-gap: var(--spacing-1);
-
+    scroll-margin-top: 6rem;
 }
 
 .footer__content {
@@ -48,6 +48,11 @@
 .footer__content_links li{
     cursor: pointer;
     width: fit-content;
+}
+
+.footer__content_links li:hover{
+    opacity: .7;
+    transition: opacity .25s ease-in-out;
 }
 
 .footer__content_links p {

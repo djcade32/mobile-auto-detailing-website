@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding: var(--spacing-2) 100px;
+    scroll-margin-top: 6rem;
 }
 
 .carousel_item {

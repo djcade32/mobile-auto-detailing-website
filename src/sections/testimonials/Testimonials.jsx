@@ -25,7 +25,7 @@ const testimonialsData = [
 const Testimonials = () => {
   // May want to turn this into a carousel in the future
   return (
-    <div className={styles.testimonials}>
+    <div className={`section ${styles.testimonials}`} id="testimonials">
       <div className="app__overlay" />
       <div className={styles.testimonials__content}>
         <SectionHeader text="Testimonials" color="white" />

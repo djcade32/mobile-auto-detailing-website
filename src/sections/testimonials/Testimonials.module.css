@@ -6,6 +6,7 @@
     background-attachment: fixed;
     position: relative;
     color: white;
+    scroll-margin-top: 6rem;
 }
 
 .testimonials__content {

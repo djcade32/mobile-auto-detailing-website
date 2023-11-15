@@ -2,7 +2,9 @@
 :root {
     /* Colors */
     --primary : #101010;
-    --accent: #25AAE1;
+    --primary-hover : #3a3a3a;
+    --accent: #23a8e1;
+    --accent-hover: #1b8bbb;
     --gray: #DBDBDB;
     --green: #0FA958;
     
@@ -20,10 +22,18 @@
     --spacing-5: 5px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .app__overlay {
@@ -32,6 +42,10 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+.navbar__navLinks_link_active {
+    border-bottom: 1px solid white;
 }
 
 @media screen and (max-width: 1024px) {

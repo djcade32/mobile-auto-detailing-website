@@ -5,7 +5,7 @@ import Services from "../services/Services";
 
 const Hero = () => {
   return (
-    <div className={styles.hero}>
+    <div className={`${styles.hero} section`} id="home">
       <div className="app__overlay" />
       <div className={styles.hero__content}>
         <div>
@@ -22,7 +22,9 @@ const Hero = () => {
           title="Book Now"
           onClick={() => {}}
           color="var(--accent)"
+          textColor="white"
           buttonContainer={{ fontSize: "var(--fontSize-header)", fontWeight: "bold" }}
+          hoverColor="var(--accent-hover)"
         />
       </div>
     </div>

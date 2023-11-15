@@ -1,19 +1,18 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ title, onClick, buttonContainer, color, textColor }) => {
+const Button = ({ title, onClick, buttonContainer, color, textColor, hoverColor }) => {
   return (
-    <div
+    <button
       className={styles.button}
-      style={
-        buttonContainer
-          ? { ...buttonContainer, backgroundColor: color }
-          : { backgroundColor: color }
-      }
+      type="button"
+      style={{ ...buttonContainer, color: textColor, backgroundColor: color }}
       onClick={onClick}
+      onMouseOver={({ target }) => (target.style.backgroundColor = hoverColor)}
+      onMouseOut={({ target }) => (target.style.backgroundColor = color)}
     >
-      <p style={{ color: textColor }}>{title}</p>
-    </div>
+      {title}
+    </button>
   );
 };
 
