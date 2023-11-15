@@ -18,7 +18,7 @@
     width: 73px;
 }
 
-.navbar__navLinks {
+.navbar__navLinks_desktop {
     display: flex;
     column-gap: var(--spacing-2);
     align-items: center;
@@ -37,11 +37,12 @@
    padding-bottom: var(--spacing-5);
 }
 
-.navbar__navLinks_button {
+.navbar__navLinks_desktop_button {
     background-color: var(--accent);
     padding: var(--spacing-4);
     border-radius: 7px;
     cursor: pointer;
+    width: fit-content;
 }
 
 .navbar__navLinks_button:hover {
@@ -80,9 +81,11 @@
         right: 0;
         height: 100vh;
         width: 25%;
+        animation: animate-navMobileMenu-slideIn .25s forwards; 
     }
 
-    .navbar__navLinks {
+    .navbar__navLinks_mobile {
+        display: flex;
         flex-direction: column;
         row-gap: var(--spacing-2);
         padding: var(--spacing-3) var(--spacing-4);

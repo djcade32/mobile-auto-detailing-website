@@ -16,6 +16,7 @@ const Navbar = () => {
 
     const detectActiveSection = () => {
       let current = "";
+
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -57,13 +58,13 @@ const Navbar = () => {
         <img className={styles.navbar__logo} src={salfordLogo} alt="company logo" />
       </div>
       <div className={styles.navbar__desktop}>
-        <ul className={styles.navbar__navLinks}>
-          <NavbarLink linkName={"Home"} defaultLink />
+        <ul className={styles.navbar__navLinks_desktop}>
+          <NavbarLink linkName={"Home"} defaultLink={window.innerHeight > 800} />
           <NavbarLink linkName={"Services"} />
           <NavbarLink linkName={"Packages"} />
           <NavbarLink linkName={"Testimonials"} />
           <NavbarLink linkName={"Gallery"} />
-          <div className={styles.navbar__navLinks_button}>
+          <div className={styles.navbar__navLinks_desktop_button}>
             <li>
               <a href="#footer">Contact Us</a>
             </li>
@@ -80,7 +81,7 @@ const Navbar = () => {
           />
         ) : (
           <div className={styles.navbar__mobile_navLinksContainer}>
-            <ul className={styles.navbar__navLinks}>
+            <ul className={styles.navbar__navLinks_mobile}>
               <NavbarLink
                 linkName={"Home"}
                 selectedLink={selectedLink}
@@ -111,12 +112,14 @@ const Navbar = () => {
                 setSelectedLink={setSelectedLink}
                 color="var(--primary)"
               />
-              <NavbarLink
-                linkName={"Contact Us"}
-                selectedLink={selectedLink}
-                setSelectedLink={setSelectedLink}
-                color="var(--primary)"
-              />
+              <div
+                style={{ color: "var(--primary)" }}
+                className={styles.navbar__navLinks_desktop_button}
+              >
+                <li>
+                  <a href="#footer">Contact Us</a>
+                </li>
+              </div>
             </ul>
           </div>
         )}

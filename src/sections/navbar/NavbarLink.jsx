@@ -2,8 +2,7 @@ import React from "react";
 
 import styles from "./Navbar.module.css";
 
-const NavbarLink = ({ linkName, color, underline = true, defaultLink = false, id, onClick }) => {
-  const linkStyle = underline ? styles.navbar__navLinkSelected : "";
+const NavbarLink = ({ linkName, color, defaultLink = false, id, onClick }) => {
   return (
     <li
       onClick={onClick}
