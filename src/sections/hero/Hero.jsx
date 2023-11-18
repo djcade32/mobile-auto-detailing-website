@@ -1,9 +1,18 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import Button from "../../components/button/Button";
-import Services from "../services/Services";
 
 const Hero = () => {
+  const scrollToPackagesSection = () => {
+    let section = document.getElementById("packages");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className={`${styles.hero} section`} id="home">
       <div className="app__overlay" />
@@ -20,7 +29,7 @@ const Hero = () => {
         </div>
         <Button
           title="Book Now"
-          onClick={() => {}}
+          onClick={scrollToPackagesSection}
           color="var(--accent)"
           textColor="white"
           buttonContainer={{ fontSize: "var(--fontSize-header)", fontWeight: "bold" }}

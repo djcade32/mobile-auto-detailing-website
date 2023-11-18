@@ -76,6 +76,7 @@
 
     .navbar__mobile_navLinksContainer {
         background-color: var(--gray);
+        border-left: 1px solid var(--primary);
         position: absolute;
         top: 0;
         right: 0;
