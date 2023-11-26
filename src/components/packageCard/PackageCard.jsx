@@ -6,10 +6,19 @@ import Button from "../button/Button";
 import { AllPackageFeatures } from "../../enums/Packages.enums";
 import Modal from "../modal/Modal";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
+import { toSnakeCase } from "../../helpers/strings";
+
+const packages = {
+  NO_THANK_YOU: { name: "No thank you", link: "superior" },
+  HEADLIGHT_RESTORATION: { name: "Headlight Restoration", link: "superior" },
+  DENT_REMOVAL: { name: "Dent Removal", link: "superior" },
+  SCRATCH_REMOVAL: { name: "Scratch Removal", link: "superior" },
+};
 
 const PackageCard = ({ packageInfo }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [selectedPackage, setSelectedPackage] = useState(packages.NO_THANK_YOU);
 
   useEffect(() => {
     const setWidth = () => {
@@ -21,6 +30,41 @@ const PackageCard = ({ packageInfo }) => {
       window.removeEventListener("resize", setWidth);
     };
   }, []);
+
+  const determineSelectedPackage = (selected) => {
+    const { HEADLIGHT_RESTORATION, DENT_REMOVAL, SCRATCH_REMOVAL, NO_THANK_YOU } = packages;
+    switch (selected) {
+      case HEADLIGHT_RESTORATION.name:
+        setSelectedPackage(HEADLIGHT_RESTORATION);
+      case DENT_REMOVAL.name:
+        setSelectedPackage(DENT_REMOVAL);
+      case SCRATCH_REMOVAL.name:
+        setSelectedPackage(SCRATCH_REMOVAL);
+      default:
+        setSelectedPackage(NO_THANK_YOU);
+    }
+  };
+
+  const checkboxComponent = (option) => {
+    const snakeCaseString = toSnakeCase(option);
+    return (
+      <div className={styles.packageCard__extraServicesModal_content_option}>
+        {selectedPackage.name === option ? (
+          <MdCheckBox size={40} color="var(--green)" cursor="pointer" />
+        ) : (
+          <MdCheckBoxOutlineBlank
+            size={40}
+            color="var(--gray)"
+            cursor="pointer"
+            onClick={() => setSelectedPackage(packages[snakeCaseString])}
+          />
+        )}
+        <div>
+          <p>{option}</p>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className={styles.packageCard}>
@@ -91,30 +135,10 @@ const PackageCard = ({ packageInfo }) => {
                 </p>
               </div>
               <div className={styles.packageCard__extraServicesModal_content_options}>
-                <div className={styles.packageCard__extraServicesModal_content_option}>
-                  <MdCheckBox size={40} color="var(--green)" cursor="pointer" />
-                  <div>
-                    <p>No thank you</p>
-                  </div>
-                </div>
-                <div className={styles.packageCard__extraServicesModal_content_option}>
-                  <MdCheckBoxOutlineBlank size={40} color="var(--gray)" cursor="pointer" />
-                  <div>
-                    <p>Headlight Restoration</p>
-                  </div>
-                </div>
-                <div className={styles.packageCard__extraServicesModal_content_option}>
-                  <MdCheckBoxOutlineBlank size={40} color="var(--gray)" cursor="pointer" />
-                  <div>
-                    <p>Dent Removal</p>
-                  </div>
-                </div>
-                <div className={styles.packageCard__extraServicesModal_content_option}>
-                  <MdCheckBoxOutlineBlank size={40} color="var(--gray)" cursor="pointer" />
-                  <div>
-                    <p>Scratch Removal</p>
-                  </div>
-                </div>
+                {checkboxComponent("No thank you")}
+                {checkboxComponent("Headlight Restoration")}
+                {checkboxComponent("Dent Removal")}
+                {checkboxComponent("Scratch Removal")}
               </div>
             </div>
             <div className={styles.packageCard__extraServicesModal_content_buttons}>
@@ -127,7 +151,10 @@ const PackageCard = ({ packageInfo }) => {
                   width: windowWidth < 630 ? "100%" : 150,
                 }}
                 hoverColor="var(--primary-hover)"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setSelectedPackage(packages.NO_THANK_YOU);
+                }}
               />
               <Button
                 title="Next"
@@ -138,6 +165,9 @@ const PackageCard = ({ packageInfo }) => {
                   width: windowWidth < 630 ? "100%" : 150,
                 }}
                 hoverColor="var(--accent-hover)"
+                onClick={() =>
+                  (window.location.href = `https://calendly.com/normancade/${selectedPackage.link}`)
+                }
               />
             </div>
           </div>
